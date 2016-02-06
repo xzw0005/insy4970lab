@@ -1,22 +1,74 @@
 <!DOCTYPE HTML>
 <head>
-	<title>INSY4970 Lab</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>INSY4970 LAB</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<meta charset="utf-8">
 	<meta name="description" content="Auburn University INSY4970 Lab">
 	<script src="//d3js.org/d3.v3.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <html>
 	<body>
-		<center><h1>Industrial and Systems Data Visualization Lab 1</h1></center>
+		<div class="navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar bar1"></span>
+						<span class="icon-bar bar2"></span>
+						<span class="icon-bar bar3"></span>
+					</button>
+					<a class="navbar-brand" href="#">XZW0005 LAB</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">LINK</a></li>     
+						<li class="dropdown>">
+							<a href="#" class="dropdown-toggle link" data-toggle="dropdown">DROPDOWN<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">LINK</a></li>
+								<li><a href="#">LINK</a></li>
+								<li><a href="#">LINK</a></li>
+							</ul>
+						</li>
+						<li><a href="#">LINK</a></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
-		<p>Xing Wang's Lab 1 HTML document</p>
-		<div class="bcolor-blue"></div>
+		<div class="container-fluid">
+		<div class="row">
+			<center><h1>Industrial and Systems Data Visualization Lab 2</h1></center>
+		</div>
+		<div class="row">
+			<p>Xing Wang's Lab 2 HTML document</p>
+		</div>		
+		<div class="row">
+			<div class="col-md-4 col-xs-12">
+				<div class="bcolor-red"></div>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<div class="bcolor-blue"></div>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<div class="bcolor-red"></div>
+			</div>
+		</div>
+		</div>
+		<!--div class="bcolor-blue"></div>
 		<div class="bcolor-red"></div>
 		<a href="chart.html">Chart Example</a>
 		<svg height="500" width="1000">
 			<circle cx="200" cy="200" r="50" fill="steelblue" />
 			<rect x = "50"	y = "10"	width = "10"	height = "100"	fill = "steelblue" />
-		</svg>
+		</svg-->
 	</body>
 </html>

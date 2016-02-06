@@ -12,14 +12,16 @@ p{
 
 .bcolor-blue{
 	height:200px;
-	width:200px;
+	width:100%;
 	background-color:blue;
 }
 
 .bcolor-red{
 	height:200px;
-	width:200px;
+	width:100%;
 	background-color:red;
-	float:right;
-	border-radius:10px;
+}
+
+body{
+	padding-top:50px;
 }
