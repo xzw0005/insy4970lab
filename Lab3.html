@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+	<style type="text/css">
+	body{
+		width: 800px;
+		margin: 25px auto;
+		font-family: "Helvettica Neue", Helvettica, Arial, "Lucida Grande", sans-serif;
+		}
+		rect{
+			fill-opacity:0.8;
+			}
+		rect:hover {
+		fill-opacity:1;
+		}
+	</style>
+</head>
+<body>
+	<h1>Lab 3: Data Driven Documents</h1>
+	
+	<script type="text/javascript">
+	
+	var margin = {top: 40, bottom: 10, left:20, right:20};
+	var width = 800 -margin.left - margin.right;
+	var height = 600 - margin.top - margin.bottom;
+	
+	//Creates sources <svg> element
+	var svg = d3.select("body").append("svg")
+				.attr("width", width+margin.left+margin.right)
+				.attr("height", height+margin.top+margin.bottom);
+	
+	// Group used to enforce margin
+	var g = svg.append("g")
+				.attr("transform", "translate("+margin.left+","+margin.top+")");
+	
+	////////////////////////////////////////////////
+	///////////////////YOUR CODE///////////////////
+	//////////////////////////////////////////////// 
+	
+d3.json("weather.json", function(dat) { 
+
+	//console.log(data[0]["temperature"]);
+	var temperature = [];
+	var city = [];
+	for (var i = 0; i < dat.length; i++) {
+		temperature[i] = dat[i]["temperature"];
+		city[i] = dat[i]["location"]["city"];
+	}
+	//console.log(temperature);
+	//console.log(city);
+	
+	var rect = g.selectAll("rect")
+				.data(temperature)
+				//.data([66.38, 21.51, 43.37, 34.17, 56.21,])
+				.enter().append("rect");
+				
+	var text = g.selectAll("text")
+				.data(city)
+				//.data(["San Francisco", "Boston", "New York", "Tokyo", "Washington, D.C."])
+				.enter().append("text");
+				
+	var scale = d3.scale.linear()
+				.domain([0, 200])
+				.range([0, height]);
+				
+	var color = d3.scale.linear()
+				.domain([20, 70])
+				.range(["yellow", "red"]);
+				
+	var bar_height = 50;
+				
+	rect
+		.attr("fill", function(d, i) {
+			return color(d);
+		} )
+		.attr("width", function(d, i) {
+			return scale(d) * 3;
+		} )
+		.attr("height", bar_height)
+		.attr("x", 50)
+		.attr("y", function(d, i){
+				//console.log(d, i);
+				return i * (bar_height + 5);
+		} );
+
+	text
+		.attr("fill", "black" )
+		//.attr("width", function(d, i) {
+		//	return scale(d);
+		//} )
+		.attr("height", bar_height)
+		.attr("x", 50)
+		.attr("y", function(d, i){
+				//console.log(d, i);
+				return i * (bar_height + 5) + bar_height / 2;
+		} )
+		.text(function(d) {return d} );
+} );	
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+	{
+		"temperature": 66.38,
+		"location":{
+		"city": "San Francisco",
+		"country": "US"
+		}
+	},
+	{
+		"temperature": 21.51,
+		"location":{
+		"city": "Boston",
+		"country": "US"
+		}
+	},
+	{
+		"temperature": 43.37,
+		"location":{
+		"city": "New York",
+		"country": "US"
+		}
+	},
+	{
+		"temperature": 34.17,
+		"location":{
+		"city": "Tokyo",
+		"country": "JP"
+		}
+	},
+	{
+		"temperature": 56.21,
+		"location":{
+		"city": "Washington, D.C.",
+		"country": "US"
+		}
+	}
+]	
